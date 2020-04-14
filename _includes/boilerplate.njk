@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+    <head>
+        <meta charset="utf-8">
+        <title>{{ title }}</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/css/style.css">
+        <link rel="stylesheet" href="/css/highlight.css">
+        <link rel="stylesheet" href="https://use.typekit.net/cvd0fuy.css">
+    </head>
+    <body>
+    <script>
+    let url = window.location.href;
+    // check if the url contains a link to a specific text
+    if (url.includes('#')) {
+      if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+      }
+    }
+    </script>
+    <div id="share">
+      <p>share</p>
+    </div>
+
+    <nav>
+        <div>
+        <a href="/index.html">Home</a>
+        <a href="/_pages/course/index.html">Courses</a>
+        <a>Team</a>
+        </div>
+    </nav>
+
+{{ content | safe }}
+    
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.18.1/highlight.min.js"></script>
+    <script src="/script/script.js"></script>
+    </body>
+
+</html>

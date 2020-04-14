@@ -1,0 +1,21 @@
+{
+  "name": "ucla-acm-design-doc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "gulp sass; eleventy",
+    "serve": "gulp watch & eleventy --serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tfukaza/UCLA-ACM-Design-doc.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2",
+    "@11ty/eleventy": "^0.10.0"
+  }
+}

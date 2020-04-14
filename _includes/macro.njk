@@ -1,0 +1,93 @@
+
+
+{% macro nav() %}
+<nav>
+    <div>
+    <a href="/index.html">Home</a>
+    <a href="/pages/course/index.html">Courses</a>
+    <a>Team</a>
+    </div>
+</nav>
+{% endmacro %}
+
+{% macro header(title="Title") %}
+
+<header>
+    <div>
+        <h1>{{ title }}</h1>
+    </div>
+</header>
+    
+{% endmacro %}
+
+{% macro footer() %}
+
+<footer>
+   
+</footer>
+    
+{% endmacro %}
+
+{% macro divider(type=1) %}
+
+   <div class = "divider"></div>
+    
+{% endmacro %}
+
+
+
+
+
+{% macro prompt(id="#1", title="Prompt",diff=1, due="1/1") %}
+
+   <div class="prompt">
+       
+            <h4>{{ id }}</h4> 
+            <h2>{{ title }}</h2>  
+            
+            <h4>Difficulty</h4>
+            <div class="difficulty">
+               <span><span style="width: {{diff }}px"></span></span>
+            </div>
+            <h4>Due</h4>
+            <div class="due">
+                <h3>{{ due }}</h3>
+            </div>
+                    
+    </div>
+    
+{% endmacro %}
+
+
+
+{% macro img(src="https://via.placeholder.com/150", caption="insert caption") %}
+
+<div class="image">
+    <img src="{{ src }}">
+    <p class="caption">{{ caption }}</p>
+</div>
+    
+{% endmacro %}
+
+
+{% macro post_img(title="00", src="https://via.placeholder.com/150", caption="insert caption", x="-10%", y="-10%") %}
+
+<div class="image">
+<div class="marker" style="left:{{x}};top:{{y}};"></div>
+    <img src="/assets/post_img/{{ title }}/{{ src }}">
+    <p class="caption">{{ caption }}</p>
+</div>
+    
+{% endmacro %}
+
+
+{% macro link(ref="", title="", name="") %}
+
+<div class="link">
+    <div></div>
+    <img src="https://www.google.com/s2/favicons?domain={{ title }}">
+    <a href=" {{ ref }} ">{{ name }}</a>
+    <p> {{ title }} </p>
+</div>
+    
+{% endmacro %}

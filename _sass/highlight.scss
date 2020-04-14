@@ -1,0 +1,57 @@
+.hljs{
+    background-color: #333d40;
+}
+
+
+
+pre{
+    overflow-x: scroll;
+    
+    &::-webkit-scrollbar{
+        height:3px;
+        border-radius: 1px;
+    }
+
+    &::-webkit-scrollbar-track{
+        background: #ffffff00;
+    }
+
+    &::-webkit-scrollbar-thumb{
+        background: #85888a;
+    }
+
+    &::-webkit-scrollbar-thumb:hover{
+        background: #aeb3b6;
+        transition: background 0.2s;
+    }
+
+}
+
+.hljs-comment{
+    color: #6d6d6d;
+}
+
+.hljs-attr{
+    color: #d4d4d4;
+}
+
+.hljs-string{
+    color: #d4d4d4;
+}
+
+
+.hljs-tag{
+    color: #9b9b9b;
+}
+
+.hljs-tag{
+    color: #8c8c8c;
+}
+
+.hljs-name{
+    color: #23c2ff;
+}
+
+*{
+    color: #e6e6e6;
+}

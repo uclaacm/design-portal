@@ -1,0 +1,68 @@
+---
+layout: boilerplate.njk
+---
+
+<link rel="stylesheet" href="/css/courses.css">
+<header class="course-header">
+
+</header>
+<main class="sections">
+<div class = "ex">
+        <img src="/assets/img/course/{{ course_id }}.svg">
+        <h2>{{ course_title }}</h2>
+        <!--<p> {{ course_desc}} </p>-->
+
+
+        <h3>Outline</h3>
+    
+        {% for post in collections[course_id] %}
+        
+        {% if post.data.type == "header" %}
+
+                <h3>{{ post.data.title }} </h3>
+
+        {% else %}
+                <p> 
+
+                {% if post.data.type == "prompt" %}
+                <span style="background-color:#969696"></span> 
+                {% else %}
+                <span></span> 
+                {% endif %}
+
+                {{ post.data.title }} 
+        
+                </p>
+                <span></span>
+        {% endif %} 
+        
+        {% endfor %}
+    
+</div>
+
+<div class="section-container">
+
+{% for post in collections[course_id] | sort(attr="data") %}
+
+        {% if post.data.type == "header" %}
+
+                <h4>{{ post.data.title }}</h4>
+
+        {% else %}
+        <span></span>
+        <a href="{{ post.url }}index.html" class="section">   
+                {% if post.data.type == "prompt" %}
+                        <img src="/assets/img/course/prompt.svg">
+                        <h3>{{ post.data.title }}</h3>
+                        <p>{{ post.data.excerpt }} </p>
+                {% else %}
+                        <img src="/assets/img/course/reading.svg">
+                        <h3>{{ post.data.title }}</h3>
+                {% endif %}
+           
+        </a>    
+        {% endif %} 
+    
+{% endfor %}
+</div>     
+</main>

@@ -1,2 +1,1 @@
-# design-portal
-Portal site for ACM Design
+https://ucla-acm-design-doc.now.sh/

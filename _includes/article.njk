@@ -1,0 +1,17 @@
+---
+layout: boilerplate.njk
+---
+
+{% import "_includes/macro.njk" as m %}
+
+<main>
+
+{{ m.header( title ) }}
+<article>
+
+{{ content | safe }}
+
+</article>
+</main>
+
+{{ m.footer() }}

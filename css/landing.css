@@ -1,0 +1,14 @@
+.title {
+  width: 100%;
+  height: 300px;
+  margin: 0px;
+  display: grid;
+  grid-template-columns: 1fr 400px 1fr;
+  grid-template-rows: 1fr 200px 1fr;
+  grid-template-areas: " . . ." ". header ." ". . ."; }
+  .title h1 {
+    grid-area: header; }
+
+@media (max-width: 1000px) {
+  .notifications {
+    grid-template-columns: 1fr 1%     96% 1% 1fr; } }
