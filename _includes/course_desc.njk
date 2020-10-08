@@ -8,7 +8,7 @@ layout: boilerplate.njk
 </header>
 <main class="sections">
 <div class = "ex">
-        <img src="/assets/img/course/{{ course_id }}.svg">
+        <img src="/assets/img/courses/{{ course_id }}.svg">
         <h2>{{ course_title }}</h2>
         <!--<p> {{ course_desc}} </p>-->
 
@@ -52,11 +52,11 @@ layout: boilerplate.njk
         <span></span>
         <a href="{{ post.url }}index.html" class="section">   
                 {% if post.data.type == "prompt" %}
-                        <img src="/assets/img/course/prompt.svg">
+                        <img src="/assets/img/courses/prompt.svg">
                         <h3>{{ post.data.title }}</h3>
                         <p>{{ post.data.excerpt }} </p>
                 {% else %}
-                        <img src="/assets/img/course/reading.svg">
+                        <img src="/assets/img/courses/reading.svg">
                         <h3>{{ post.data.title }}</h3>
                 {% endif %}
            
