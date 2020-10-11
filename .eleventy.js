@@ -5,7 +5,7 @@ module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy('script');
     eleventyConfig.addPassthroughCopy('assets');
     eleventyConfig.addPassthroughCopy('pages');
-    eleventyConfig.addPassthroughCopy('_courses');
+    //eleventyConfig.addPassthroughCopy('courses');
     //make sure all html files in the pages directory uses the default layout
     //eleventyConfig.addDefaultLayout('src/pages/*.html', 'src/_includes/default.html');
 
@@ -30,7 +30,7 @@ module.exports = function(eleventyConfig) {
         },
         htmlTemplateEngine: "md",
         markdownTemplateEngine: "njk",
-        templateFormats: ["md", "njk"]
+        templateFormats: ["md", "njk", "svg", "png"]
     }
 
 

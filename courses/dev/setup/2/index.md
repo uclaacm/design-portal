@@ -1,6 +1,6 @@
 ---
 layout: article.njk
-tags: ['course', '0-2']
+tags: ['course', 'setup']
 type: prompt
 date: 1970-03-02
 title: "Setting Up GitHub and ZEIT"

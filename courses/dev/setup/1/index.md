@@ -1,6 +1,6 @@
 ---
 layout: article.njk
-tags: ['course', '0-2']
+tags: ['course', 'setup']
 type: reading
 date: 1970-03-01
 title: Node.js and npm

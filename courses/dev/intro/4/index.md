@@ -1,6 +1,6 @@
 ---
 layout: article.njk
-tags: ['course', '0-1']
+tags: ['course', 'intro']
 type: reading
 date: 1970-02-01
 title: "Git and GitHub"

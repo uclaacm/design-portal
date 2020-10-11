@@ -1,6 +1,6 @@
 ---
 layout: article.njk
-tags: ['course', '0-2']
+tags: ['course', 'setup']
 type: prompt
 date: 1970-03-03
 title: "Setting Up 11ty"

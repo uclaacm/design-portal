@@ -1,6 +1,6 @@
 ---
 layout: article.njk
-tags: ['course', '0-0']
+tags: ['course', 'intro']
 type: reading
 date: 1970-01-03
 title: The Computer
