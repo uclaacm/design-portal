@@ -1,23 +1,19 @@
 header {
   height: 400px;
   width: 100%; }
-  header h1 {
-    position: relative;
-    top: 200px;
-    margin: 0px;
-    transform: translateY(-50%); }
 
 .topics {
-  grid-template-columns: 1fr 15px [main-begin] 920px [main-end] 15px 1fr; }
+  grid-column: main-begin/two-end;
+  grid-template-columns: inherit; }
   .topics > p {
-    grid-column: 3/4;
+    grid-column: main-begin/two-end;
     width: 500px;
     margin-bottom: 94px;
-    font-size: 16px;
+    font-size: 20px;
     line-height: 1.8em; }
   .topics > h2 {
     font-weight: 600;
-    grid-column: 3/4;
+    grid-column: main-begin/two-end;
     font-size: 32px;
     margin-bottom: 0px; }
 
@@ -25,36 +21,41 @@ header {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  grid-column: 2/5; }
+  grid-column: main-begin/main-end; }
+
+.topic:hover {
+  box-shadow: 0px 12px 60px 0px #121a3124; }
 
 .topic {
   text-decoration: none;
-  width: calc((100% - 15px * 6) / 3);
+  width: 270px;
   height: 309px;
-  border-radius: 15px;
+  border-radius: 8px;
   box-sizing: border-box;
   background-color: #F8F8F8;
   padding: 5px 35px;
-  margin: 15px; }
+  margin: 0px 15px;
+  box-shadow: 0px 12px 60px 0px #121a3100; }
   .topic > img {
-    height: 47px;
+    height: 50px;
     overflow: hidden;
     background-color: transparent;
-    border-radius: 12px;
-    margin: 29px 0px; }
+    border-radius: 23%;
+    margin-top: 38px; }
   .topic > h2 {
-    margin-top: 0px;
-    margin-bottom: -7px;
-    font-size: 20px;
+    margin-top: 24px;
+    margin-bottom: 5px;
+    font-size: 24px;
     font-weight: 600;
-    line-height: 1.4em; }
+    line-height: 1.6em; }
   .topic > p {
-    font-size: 15px;
+    margin-top: 0px;
+    font-size: 14px;
     line-height: 1.5em;
     font-weight: normal; }
 
 .course-header {
-  height: 200px;
+  height: 100px;
   width: 100%; }
 
 main > h2 {
@@ -63,6 +64,16 @@ main > h2 {
 
 .sections {
   grid-template-columns: 1fr [ex-begin] 300px [ex-end] 90px [list-begin] 480px [list-end] 1fr; }
+  .sections .directory {
+    display: grid;
+    grid-column: ex-begin/line-end;
+    width: 100%;
+    margin-bottom: 100px; }
+    .sections .directory h2 {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      color: #BEBEBE; }
   .sections .ex {
     grid-column: ex-begin/ex-end;
     position: relative; }
@@ -79,8 +90,8 @@ main > h2 {
       transform: translate(-11px, 0px); }
     .sections .ex > img {
       background-color: #fbfbfb;
-      border-radius: 15px;
-      margin-bottom: 15px;
+      border-radius: 23%;
+      margin-bottom: 20px;
       width: 80px;
       overflow: hidden; }
     .sections .ex > h2 {
@@ -88,9 +99,6 @@ main > h2 {
       font-size: 29px;
       font-weight: 600;
       margin-bottom: 10px; }
-    .sections .ex > p {
-      font-size: 15px;
-      line-height: 1.6em; }
     .sections .ex > h3 {
       font-weight: 600;
       text-transform: uppercase;
@@ -103,7 +111,9 @@ main > h2 {
       font-weight: 400;
       color: #636363;
       margin: -4px 0px;
-      font-size: 16px; }
+      font-size: 16px;
+      line-height: 1.8em;
+      width: 80%; }
       .sections .ex > p > span {
         height: 8px;
         border-radius: 4px;
@@ -124,9 +134,30 @@ main > h2 {
       display: none; }
   .sections .section-container {
     grid-column: list-begin/list-end;
-    grid-row: 1/2;
+    grid-row: 2/3;
     display: flex;
     flex-direction: column; }
+    .sections .section-container .vertical-line {
+      content: '';
+      position: relative;
+      width: 3px;
+      border-radius: 1.5px;
+      height: 100%;
+      background-color: #e8e8e8;
+      grid-area: line;
+      justify-self: left;
+      margin: 16px 23px; }
+    .sections .section-container .section:last-of-type .vertical-line {
+      display: none; }
+    .sections .section-container > h3 {
+      font-weight: 100;
+      text-transform: uppercase;
+      color: #c1c1c1;
+      margin-top: 54px;
+      margin-bottom: 20px;
+      margin-left: 22px;
+      font-size: 13px;
+      letter-spacing: 5px; }
     .sections .section-container h4 {
       margin-top: 100px;
       margin-bottom: 30px;
@@ -149,18 +180,6 @@ main > h2 {
         grid-area: image;
         justify-self: left;
         align-self: center; }
-      .sections .section-container .section:after {
-        content: '';
-        position: relative;
-        width: 3px;
-        border-radius: 1.5px;
-        height: 100%;
-        background-color: #e8e8e8;
-        grid-area: line;
-        justify-self: left;
-        margin: 16px 23px; }
-      .sections .section-container .section:after::last-of-type {
-        display: none; }
       .sections .section-container .section > h3 {
         text-decoration: none;
         font-weight: 600;
@@ -173,7 +192,7 @@ main > h2 {
         font-size: 15px;
         color: #757575;
         line-height: 1.7em;
-        margin-top: 4px;
+        margin-top: -5px;
         margin-bottom: 15px; }
     .sections .section-container > span {
       display: block;

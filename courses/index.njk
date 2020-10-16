@@ -6,7 +6,14 @@ layout: boilerplate.njk
 
 {% macro topic(order = 1, img = "https://via.placeholder.com/150", title="", href="", desc="") %} 
 
-    <a style="order: {{ order }}" href={{ href }} class="topic">
+    <a style="order: {{ order }};
+    {% if order % 4 == 1 %}
+        margin-left:0px
+    {% endif %}
+    {% if order % 4 == 0 %}
+        margin-right:0px
+    {% endif %}"
+     href="{{ href }}" class="topic">
        
         <img src="{{ href }}icon.svg">
         <h2>{{ title }}</h2>
@@ -18,21 +25,51 @@ layout: boilerplate.njk
 
 {# Main content #}
 
-<header>
+{# <header>
     <h1>Courses</h1> 
-</header>
+</header> #}
 
 <link rel="stylesheet" href="/css/courses.css">
 
-<main class="topics">
-    <h2>Developer</h2>
-    <p>Introduction to basic concepts of design necessary to produce graphic designs adhering to our branding guidelines.  </p>
-    <div class="topic-container"> 
-        {% for post in collections.dev %}
-            {{ topic(post.data.order, post.data.course_id, post.data.course_title, post.url, post.data.course_desc )  }}
-        {% endfor %}
-    </div>  
+<main>
+
+    <header class="topic-header">
+    </header>
+
+    <section class="topics">
+        <h2>Design</h2>
+        <p>Introduction to basic concepts of design necessary to produce graphic designs adhering to our branding guidelines. </p>
+        <div class="topic-container"> 
+            {% for post in collections.design %}
+                {{ topic(post.data.order, post.data.course_id, post.data.course_title, post.url, post.data.course_desc )  }}
+            {% endfor %}
+        </div>  
+    </section>
+
+    <section class="topics">
+        <h2>UX</h2>
+        <p>Introduction to UX concepts, beginning with basic concepts and practical applications, eventually moving on to more advanced topics like motion design.</p>
+        <div class="topic-container"> 
+            {% for post in collections.ux %}
+                {{ topic(post.data.order, post.data.course_id, post.data.course_title, post.url, post.data.course_desc )  }}
+            {% endfor %}
+        </div>  
+    </section>
+
+    <section class="topics">
+        <h2>Developer</h2>
+        <p>Introduction to skill sets necessary to kickstart you as a frontend dev.</p>
+        <div class="topic-container"> 
+            {% for post in collections.dev %}
+                {{ topic(post.data.order, post.data.course_id, post.data.course_title, post.url, post.data.course_desc )  }}
+            {% endfor %}
+        </div>  
+    </section>
+
+
 </main>  
+
+
 
 {% import "_includes/macro.njk" as m %}
 {{ m.footer() }}

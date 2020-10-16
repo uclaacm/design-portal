@@ -7,7 +7,7 @@ main {
   background-color: #ffffff;
   margin: 0px;
   display: grid;
-  grid-template-columns: 1fr     920px 1fr; }
+  grid-template-columns: 1fr [main-begin one-start] repeat(2, 74px 30px) 74px [one-end] 30px [two-start] repeat(2, 74px 30px) 74px [two-end] 30px [three-start] repeat(2, 74px 30px) 74px [three-end] 30px [four-start] repeat(2, 74px 30px) 74px [four-end main-end] 1fr; }
 
 @media (max-width: 1000px) {
   main {
@@ -141,7 +141,7 @@ nav {
 
 /* header */
 header {
-  grid-column: 2 / 3;
+  grid-column: two-start / three-end;
   height: 400px;
   overflow: hidden;
   position: relative; }
@@ -176,17 +176,17 @@ footer {
 article {
   /*display: grid;
     grid-template-columns: subgrid;*/
-  grid-column: 2 / 3; }
+  grid-column: one-start / four-end; }
 
 section {
   width: 100%;
   margin-bottom: 100px;
   display: grid;
-  grid-template-columns: [large-margin-start] 120px [small-margin-start] 60px [main-start] 560px [main-end] 60px [small-margin-end] 120px [large-margin-end]; }
+  grid-template-columns: 1fr [large-margin-start] 120px [small-margin-start] 60px [main-start] 560px [main-end] 60px [small-margin-end] 120px [large-margin-end] 1fr; }
   section > * {
     grid-column: main-start / main-end; }
   section > p {
-    color: #888888;
+    color: #2b2b2b;
     line-height: 1.8em; }
   section > ul li {
     color: #888888;
@@ -199,14 +199,6 @@ section {
     text-transform: capitalize;
     margin-top: 50px;
     margin-bottom: 30px; }
-  section > h2::after {
-    content: '';
-    display: block;
-    height: 2px;
-    margin-top: 20px;
-    background-color: #d6d6d6;
-    grid-column: small-margin-start / small-margin-end;
-    opacity: 1; }
   section > h3 {
     color: #313131;
     font-size: 20px;

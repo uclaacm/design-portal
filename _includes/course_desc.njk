@@ -1,67 +1,74 @@
 ---
 layout: boilerplate.njk
 ---
-
+{% import "_includes/macro.njk" as m %}
 <link rel="stylesheet" href="/css/courses.css">
-        <header class="course-header">
-        </header>
+<header class="course-header">
+</header>
+
 <main class="sections">
-<div class = "ex">
-        <img src="/courses/{{ tags }}/{{ course_id }}/icon.svg">
-        <h2>{{ course_title }}</h2>
-        <!--<p> {{ course_desc}} </p>-->
+        <div class="directory"> 
+                <h2>{{ tags }}</h2>
+        </div>
+        <div class = "ex">
+                <img src="/courses/{{ tags }}/{{ course_id }}/icon.svg">
+                <h2>{{ course_title }}</h2>
+                <!--<p> {{ course_desc}} </p>-->
+                <p>{{ course_desc }}</p>
 
-
-        <h3>Outline</h3>
-    
-        {% for post in collections[course_id] %}
+                {# <h3>Outline</h3>
         
-        {% if post.data.type == "header" %}
+                {% for post in collections[course_id] %}
+                
+                {% if post.data.type == "header" %}
 
-                <h3>{{ post.data.title }} </h3>
+                        <h3>{{ post.data.title }} </h3>
 
-        {% else %}
-                <p> 
-
-                {% if post.data.type == "prompt" %}
-                <span style="background-color:#969696"></span> 
                 {% else %}
-                <span></span> 
-                {% endif %}
+                        <p> 
 
-                {{ post.data.title }} 
+                        {% if post.data.type == "prompt" %}
+                        <span style="background-color:#969696"></span> 
+                        {% else %}
+                        <span></span> 
+                        {% endif %}
+
+                        {{ post.data.title }} 
+                
+                        </p>
+                        <span></span>
+                {% endif %} 
+                
+                {% endfor %} #}
         
-                </p>
+        </div>
+
+        <div class="section-container">
+        <h3>Modules</h3>
+        {% for post in collections[course_id] | sort(attr="data") %}
+
+                {% if post.data.type == "header" %}
+
+                        <h4>{{ post.data.title }}</h4>
+
+                {% else %}
                 <span></span>
-        {% endif %} 
+                <a href="{{ post.url }}index.html" class="section">   
+                        {% if post.data.type == "prompt" %}
+                                <img src="/assets/img/courses/prompt.svg">
+                                <h3>{{ post.data.title }}</h3>
+                                <p>{{ post.data.excerpt }} </p>
+                        {% else %}
+                                <img src="/assets/img/courses/reading.svg">
+                                <h3>{{ post.data.title }}</h3>
+                        {% endif %}
+                        <span class="vertical-line"></span>
+                
+                </a>    
+                {% endif %} 
         
         {% endfor %}
-    
-</div>
-
-<div class="section-container">
-
-{% for post in collections[course_id] | sort(attr="data") %}
-
-        {% if post.data.type == "header" %}
-
-                <h4>{{ post.data.title }}</h4>
-
-        {% else %}
-        <span></span>
-        <a href="{{ post.url }}index.html" class="section">   
-                {% if post.data.type == "prompt" %}
-                        <img src="/assets/img/courses/prompt.svg">
-                        <h3>{{ post.data.title }}</h3>
-                        <p>{{ post.data.excerpt }} </p>
-                {% else %}
-                        <img src="/assets/img/courses/reading.svg">
-                        <h3>{{ post.data.title }}</h3>
-                {% endif %}
-           
-        </a>    
-        {% endif %} 
-    
-{% endfor %}
-</div>     
+        </div>     
 </main>
+
+{{ m.footer() }}
