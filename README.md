@@ -1,1 +1,1 @@
-https://ucla-acm-design-doc.now.sh/
+https://acmdesign.now.sh/
